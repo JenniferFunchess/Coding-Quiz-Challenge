@@ -1,3 +1,26 @@
 #timer {
   text-align: right;
 }
+
+#question-container {
+  margin-top: 10%;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#answer-container {
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-size: 15px;
+}
+
+#startButton {
+  text-align: center;
+  display: inline-block;
+  color: magenta;
+  margin-top: 1%;
+}

@@ -40,8 +40,19 @@ var interval;
 var questionsIndex = 0;
 
 window.onload = function () {
-  timerDisplay.textContent = "Time:0";
+  countDown.textContent = "Time:0";
 };
+
+function renderOptions(quizQuestions) {
+  for (var i = 0; i < quizQuestions.length; i++) {
+    var button = document.createElement("button");
+    button.setAttribute("class", "btn btn-info");
+    button.textContent = quizQuestions[i];
+    button.setAttribute("data-value", quizQuestions[i]);
+    options.append(button);
+  }
+}
+
 function startTimer() {
   countDown = setInterval(function () {
     timeLeft--;
