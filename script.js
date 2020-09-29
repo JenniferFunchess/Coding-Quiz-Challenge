@@ -1,5 +1,11 @@
 var countDown = document.getElementbyId("timer");
+var questionOptions = document.getElementbyId("heading-question");
+var answerOptinos = document.getElementbyId("answers-options");
+var startButton = document.getElementbyId("start-button)";
 
+var welcomeContainer = document.querySelector(".Welcome-Container")
+var quizContainer = document.querySelector(".Quiz-Container")
+var finalScore = document.querySelector(".Final-Score")
 var quizQuestions = [
   {
     question: "The condition in an if/else statmennt is enclosed within ____.",
@@ -63,7 +69,8 @@ function startTimer() {
   }, 1000);
 }
 
-function startQuiz() {
-  mainPage.style.display = "none";
-  renderQuestions(questionIndex);
-}
+startButton.addEventListener("click", function () {
+    welcomeContainer.style.display = "none";
+    renderOptions(optionsToDisplay);
+  });
+

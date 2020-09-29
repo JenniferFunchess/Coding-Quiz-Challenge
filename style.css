@@ -2,7 +2,7 @@
   text-align: right;
 }
 
-#question-container {
+#welcomeHeading-container {
   margin-top: 10%;
   text-align: center;
   margin-left: 25%;
@@ -11,7 +11,7 @@
   font-size: 50px;
 }
 
-#answer-container {
+#WelcomeDescription-container {
   text-align: center;
   margin-left: 25%;
   margin-right: 25%;

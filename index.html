@@ -18,6 +18,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </head>
   <body>
+      <!-- Navigation bar with High Scores link and Timer -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container navbar-container mx-0">
             <div class="row w-100">
@@ -30,18 +31,29 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <!-- Welcome container with information and start button -->
+    <div class="Welcome-container">
         <div class="row">
-        <div id="question-container">Coding Quiz Challenge</div>
-    </div>
-    <div class="row">
-        <div id="answer-container">Try to Answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</div>
+        <div id="welcomeHeading-container">Coding Quiz Challenge</div>
+        <div id="WelcomeDescription-container">Try to Answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</div>
         
+    </div> </div>
+
+    <!-- Quiz Container with heading and answer divs -->
+    <div class="Quiz-container">
+    <div class="row">
+        <div id="heading-questions"></div>
     </div>
     <div class="row">
+        <div id="answers-options"></div>
+        </div>
+    </div>
+    <div class="Final-Score">
         <div class="col-sm-12 text-center" id="graded-answers"></div>
     </div>
     </div>
+    
+    <!-- Start button information: -->
     <div id="startButton" class="col">
         <a id="start-button" class=" btn btn-primary btn-lg " href="#" role="button">Start</a>
     </div>
