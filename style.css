@@ -33,3 +33,15 @@
   font-weight: bold;
   font-size: 30px;
 }
+
+.quiz-container {
+  text-align: center;
+}
+
+button {
+  text-align: center;
+  padding: 20px;
+  display: block;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
