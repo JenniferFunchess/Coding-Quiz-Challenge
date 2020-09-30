@@ -209,7 +209,10 @@ function quizOver() {
   finalScoreEl.style.textAlign = "center";
   finalScoreEl.style.fontSize = "25px";
   finalScoreEl.style.fontWeight = "bold";
-
+  intialsForm.setAttribute(
+    "style",
+    "fontFamily: Cambria, Cochin, Georgia, Times, serif"
+  );
   intialsForm.style.display = "block";
   submitButton.setAttribute(
     "style",
@@ -218,4 +221,6 @@ function quizOver() {
   submitButton.style.display = "block";
 }
 
-function saveIntialsAndScore() {}
+submitButton.addEventListener("click", function () {
+  window.location.replace("highscore.html");
+});

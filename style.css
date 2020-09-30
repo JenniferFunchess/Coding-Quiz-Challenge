@@ -56,3 +56,15 @@ body {
   margin: auto;
   display: inline;
 }
+
+#View-High-Scores {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size-adjust: 25px;
+}
+
+#highscorepage {
+  text-align: center;
+  display: inline-flex;
+  margin: auto;
+}
