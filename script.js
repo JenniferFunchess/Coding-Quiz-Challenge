@@ -6,6 +6,8 @@ var buttonA = document.getElementById("a");
 var buttonB = document.getElementById("b");
 var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
+var highscoreInputName = document.getElementById("High-score");
+var finalScoreEl = document.getElementById("Final-Score");
 
 var welcomeContainer = document.querySelector(".Welcome-container");
 var quizContainer = document.querySelector(".Quiz-Container");
@@ -111,12 +113,15 @@ function startQuiz() {
     if (timeLeft === 0) {
       clearInterval(timerInterval);
       showScore();
+    } else if (timeLeft < 0) {
+      clearInterval(timerInterval);
+      showScore();
     }
   }, 1000);
 }
 
 function checkAnswer(answer) {
-  correct = quizQuestions[currentQuestionIndex].correctAnswer;
+  correct = quizQuestions[currentQuestionIndex].answer;
 
   if (answer === correct && currentQuestionIndex !== finalQuestionIndex) {
     score++;
@@ -128,12 +133,24 @@ function checkAnswer(answer) {
     currentQuestionIndex !== finalQuestionIndex
   ) {
     alert("That Is Incorrect.");
+    timeLeft = -10;
     currentQuestionIndex++;
-    timeLeft -= 15;
     generateQuizQuestion();
   } else {
     showScore();
   }
 }
 
-function endQuiz() {}
+function showScore() {
+  buttonA.style.display = "none";
+  buttonB.style.display = "none";
+  buttonC.style.display = "none";
+  buttonD.style.display = "none";
+  clearInterval(countDown);
+  highscoreInputName.value = "";
+  finalScoreEl.innerHTML =
+    "You got " + score + " out of " + quizQuestions.length + " correct!";
+  finalScoreEl.style.textAlign = "center";
+  finalScoreEl.style.fontSize = "25px";
+  finalScoreEl.style.fontWeight = "bold";
+}
