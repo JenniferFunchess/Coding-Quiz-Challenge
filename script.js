@@ -82,7 +82,6 @@ function generateQuizQuestion() {
   buttonB.style.display = "block";
   buttonC.style.display = "block";
   buttonD.style.display = "block";
-  var br = document.createElement("br");
 
   if (currentQuestionIndex === finalQuestionIndex) {
     return showScore();
@@ -93,6 +92,10 @@ function generateQuizQuestion() {
   buttonB.style.display = "block";
   buttonC.style.display = "block";
   buttonD.style.display = "block";
+  buttonA.setAttribute("style", "margin:auto; width:50%; text-align:center;");
+  buttonB.setAttribute("style", "margin:auto; width:50%; text-align:center;");
+  buttonC.setAttribute("style", "margin:auto; width:50%; text-align:center;");
+  buttonD.setAttribute("style", "margin:auto; width:50%; text-align:center;");
   buttonA.textContent = currentQuestion.choiceA;
   buttonB.textContent = currentQuestion.choiceB;
   buttonC.textContent = currentQuestion.choiceC;
@@ -133,7 +136,6 @@ function checkAnswer(answer) {
     currentQuestionIndex !== finalQuestionIndex
   ) {
     alert("That Is Incorrect.");
-    timeLeft = -10;
     currentQuestionIndex++;
     generateQuizQuestion();
   } else {
@@ -146,10 +148,58 @@ function showScore() {
   buttonB.style.display = "none";
   buttonC.style.display = "none";
   buttonD.style.display = "none";
-  clearInterval(countDown);
+  clearInterval(timerInterval);
+  var gradeQuiz = "";
   highscoreInputName.value = "";
   finalScoreEl.innerHTML =
     "You got " + score + " out of " + quizQuestions.length + " correct!";
+
+  if (score === 1) {
+    var gradeQuiz = document.createElement("h1");
+    gradeQuiz.textContent = "You recieved a 20!";
+    gradeQuiz.setAttribute(
+      "style",
+      "margin:auto; width:50%; text-align:center;"
+    );
+    document.body.append(gradeQuiz);
+  }
+  if (score === 2) {
+    var gradeQuiz = document.createElement("h1");
+    gradeQuiz.textContent = "You recieved a 40!";
+    gradeQuiz.setAttribute(
+      "style",
+      "margin:auto; width:50%; text-align:center;"
+    );
+    document.body.append(gradeQuiz);
+  }
+  if (score === 3) {
+    var gradeQuiz = document.createElement("h1");
+    gradeQuiz.textContent = "You recieved a 60!";
+    gradeQuiz.setAttribute(
+      "style",
+      "margin:auto; width:50%; text-align:center;"
+    );
+    document.body.append(gradeQuiz);
+  }
+  if (score === 4) {
+    var gradeQuiz = document.createElement("h1");
+    gradeQuiz.textContent = "You recieved a 80!";
+    gradeQuiz.setAttribute(
+      "style",
+      "margin:auto; width:50%; text-align:center;"
+    );
+    document.body.append(gradeQuiz);
+  }
+  if (score === 5) {
+    var gradeQuiz = document.createElement("h1");
+    gradeQuiz.textContent = "You recieved a 100!";
+    gradeQuiz.setAttribute(
+      "style",
+      "margin:auto; width:50%; text-align:center;"
+    );
+    document.body.append(gradeQuiz);
+  }
+
   finalScoreEl.style.textAlign = "center";
   finalScoreEl.style.fontSize = "25px";
   finalScoreEl.style.fontWeight = "bold";
