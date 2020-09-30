@@ -1,6 +1,7 @@
 var countDown = document.getElementById("timer");
 var questionOptions = document.getElementById("heading-questions");
 var startButton = document.getElementById("start-button");
+var submitButton = document.getElementById("submit-button");
 var buttonOptions = document.getElementById("answer-buttons");
 var buttonA = document.getElementById("a");
 var buttonB = document.getElementById("b");
@@ -8,13 +9,14 @@ var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
 var highscoreInputName = document.getElementById("High-score");
 var finalScoreEl = document.getElementById("Final-Score");
+var intialsForm = document.getElementById("Intials-form");
 
 var welcomeContainer = document.querySelector(".Welcome-container");
 var quizContainer = document.querySelector(".Quiz-Container");
 var finalScore = document.querySelector(".Final-Score");
 var quizQuestions = [
   {
-    question: "The condition in an if/else statmennt is enclosed within ____.",
+    question: "The condition in an if/else statement is enclosed within ____.",
     choiceA: "Quotes",
     choiceB: "Curly brackets",
     choiceC: "parentheses",
@@ -48,7 +50,7 @@ var quizQuestions = [
   },
   {
     question:
-      "String values must ben enclosed within ____ when being assigned to variables.",
+      "String values must be enclosed within ____ when being assigned to variables.",
     choiceA: "parentheses",
     choiceB: "quotes",
     choiceC: "curly brackets",
@@ -69,6 +71,8 @@ window.onload = function () {
   buttonB.style.display = "none";
   buttonC.style.display = "none";
   buttonD.style.display = "none";
+  intialsForm.style.display = "none";
+  submitButton.style.display = "none";
 };
 
 startButton.addEventListener("click", function () {
@@ -84,7 +88,7 @@ function generateQuizQuestion() {
   buttonD.style.display = "block";
 
   if (currentQuestionIndex === finalQuestionIndex) {
-    return showScore();
+    return quizOver();
   }
   var currentQuestion = quizQuestions[currentQuestionIndex];
   questionOptions.innerHTML = "<p>" + currentQuestion.question + "</p>";
@@ -118,7 +122,7 @@ function startQuiz() {
       showScore();
     } else if (timeLeft < 0) {
       clearInterval(timerInterval);
-      showScore();
+      quizOver();
     }
   }, 1000);
 }
@@ -136,18 +140,20 @@ function checkAnswer(answer) {
     currentQuestionIndex !== finalQuestionIndex
   ) {
     alert("That Is Incorrect.");
+    // timeLeft = timerInterval - 10;
     currentQuestionIndex++;
     generateQuizQuestion();
   } else {
-    showScore();
+    quizOver();
   }
 }
 
-function showScore() {
+function quizOver() {
   buttonA.style.display = "none";
   buttonB.style.display = "none";
   buttonC.style.display = "none";
   buttonD.style.display = "none";
+  questionOptions.style.display = "none";
   clearInterval(timerInterval);
   var gradeQuiz = "";
   highscoreInputName.value = "";
@@ -159,7 +165,7 @@ function showScore() {
     gradeQuiz.textContent = "You recieved a 20!";
     gradeQuiz.setAttribute(
       "style",
-      "margin:auto; width:50%; text-align:center;"
+      "margin:auto; width:50%; text-align:center; fontSize:15px;"
     );
     document.body.append(gradeQuiz);
   }
@@ -168,7 +174,7 @@ function showScore() {
     gradeQuiz.textContent = "You recieved a 40!";
     gradeQuiz.setAttribute(
       "style",
-      "margin:auto; width:50%; text-align:center;"
+      "margin:auto; width:50%; text-align:center;fontSize:15px;"
     );
     document.body.append(gradeQuiz);
   }
@@ -177,7 +183,7 @@ function showScore() {
     gradeQuiz.textContent = "You recieved a 60!";
     gradeQuiz.setAttribute(
       "style",
-      "margin:auto; width:50%; text-align:center;"
+      "margin:auto; width:50%; text-align:center;fontSize:15px;"
     );
     document.body.append(gradeQuiz);
   }
@@ -186,7 +192,7 @@ function showScore() {
     gradeQuiz.textContent = "You recieved a 80!";
     gradeQuiz.setAttribute(
       "style",
-      "margin:auto; width:50%; text-align:center;"
+      "margin:auto; width:50%; text-align:center;fontSize:15px;"
     );
     document.body.append(gradeQuiz);
   }
@@ -195,7 +201,7 @@ function showScore() {
     gradeQuiz.textContent = "You recieved a 100!";
     gradeQuiz.setAttribute(
       "style",
-      "margin:auto; width:50%; text-align:center;"
+      "margin:auto; width:50%; text-align:center;fontSize:15px;"
     );
     document.body.append(gradeQuiz);
   }
@@ -203,4 +209,13 @@ function showScore() {
   finalScoreEl.style.textAlign = "center";
   finalScoreEl.style.fontSize = "25px";
   finalScoreEl.style.fontWeight = "bold";
+
+  intialsForm.style.display = "block";
+  submitButton.setAttribute(
+    "style",
+    "margin:auto; width:50%; text-align:center;"
+  );
+  submitButton.style.display = "block";
 }
+
+function saveIntialsAndScore() {}

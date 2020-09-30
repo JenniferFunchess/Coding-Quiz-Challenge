@@ -18,7 +18,8 @@
   font-size: 15px;
 }
 
-#startButton {
+#startButton,
+#submitButton {
   text-align: center;
   display: inline-block;
   color: magenta;
@@ -48,4 +49,10 @@ button {
 
 body {
   text-align: center;
+}
+
+#Intials-form {
+  text-align: center;
+  margin: auto;
+  display: inline;
 }
