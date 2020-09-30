@@ -24,3 +24,12 @@
   color: magenta;
   margin-top: 1%;
 }
+
+#heading-questions {
+  margin-top: 10%;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-weight: bold;
+  font-size: 30px;
+}

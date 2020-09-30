@@ -1,11 +1,10 @@
-var countDown = document.getElementbyId("timer");
-var questionOptions = document.getElementbyId("heading-question");
-var answerOptinos = document.getElementbyId("answers-options");
-var startButton = document.getElementbyId("start-button)";
+var countDown = document.getElementById("timer");
+var questionOptions = document.getElementById("heading-questions");
+var startButton = document.getElementById("start-button");
 
-var welcomeContainer = document.querySelector(".Welcome-Container")
-var quizContainer = document.querySelector(".Quiz-Container")
-var finalScore = document.querySelector(".Final-Score")
+var welcomeContainer = document.querySelector(".Welcome-container");
+var quizContainer = document.querySelector(".Quiz-Container");
+var finalScore = document.querySelector(".Final-Score");
 var quizQuestions = [
   {
     question: "The condition in an if/else statmennt is enclosed within ____.",
@@ -49,15 +48,35 @@ window.onload = function () {
   countDown.textContent = "Time:0";
 };
 
-function renderOptions(quizQuestions) {
+function renderOptions() {
+  startTimer();
+  welcomeContainer.style.display = "none";
+  startButton.style.display = "none";
   for (var i = 0; i < quizQuestions.length; i++) {
-    var button = document.createElement("button");
-    button.setAttribute("class", "btn btn-info");
-    button.textContent = quizQuestions[i];
-    button.setAttribute("data-value", quizQuestions[i]);
-    options.append(button);
+    var br = document.createElement("br");
+    questionOptions.append(quizQuestions[i].question);
+    questionOptions.append(br);
+
+    for (var j = 0; j < 4; j++) {
+      var button = document.createElement("button");
+      var br = document.createElement("br");
+      button.style.textAlign = "center";
+      button.style.marginTop = "1%";
+      button.style.marginBottom = "1%";
+      button.setAttribute("class", "btn btn-info");
+      button.setAttribute("type", "submit");
+      button.setAttribute("dataValue", quizQuestions[i].answer);
+      button.textContent = quizQuestions[i].choices[j];
+      questionOptions.append(br);
+      questionOptions.append(button);
+      questionOptions.append(br);
+      // button.onclick = checkAnswer;
+      // startButton.hide button
+    }
   }
 }
+
+function checkAnswer() {}
 
 function startTimer() {
   countDown = setInterval(function () {
@@ -69,8 +88,4 @@ function startTimer() {
   }, 1000);
 }
 
-startButton.addEventListener("click", function () {
-    welcomeContainer.style.display = "none";
-    renderOptions(optionsToDisplay);
-  });
-
+startButton.onclick = renderOptions;
