@@ -30,27 +30,30 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="justify-content-center">
+  <!-- Heading information -->
+  <body id="highscorebody">
     <div id="highscorepage">
       <h1 id="View-High-Scores">View High Scores:</h1>
       <br />
       <br />
     </div>
+
+    <!-- Clear and Go Back button information -->
     <div>
       <a
         href="#"
-        class="btn btn-primary btn-lg disabled justify-content-center"
-        tabindex="-1"
+        id="ViewHighScore"
+        class="btn btn-primary btn-lg active"
         role="button"
-        aria-disabled="true"
+        aria-pressed="true"
         >Clear High Scores</a
       >
       <a
         href="#"
-        class="btn btn-secondary btn-lg disabled justify-content-center"
-        tabindex="-1"
+        id="backButton"
+        class="btn btn-secondary btn-lg active"
         role="button"
-        aria-disabled="true"
+        aria-pressed="true"
         >Back</a
       >
     </div>

@@ -1,7 +1,4 @@
-#timer {
-  text-align: right;
-}
-
+/* Home Page information */
 #welcomeHeading-container {
   margin-top: 10%;
   text-align: center;
@@ -18,12 +15,18 @@
   font-size: 15px;
 }
 
+#timer {
+  text-align: right;
+}
+
 #startButton,
 #submitButton {
   text-align: center;
   display: inline-block;
   color: magenta;
 }
+
+/* Quiz information */
 
 #heading-questions {
   margin-top: 10%;
@@ -51,6 +54,8 @@ body {
   text-align: center;
 }
 
+/* View High Score page information */
+
 #Intials-form {
   text-align: center;
   margin: auto;
@@ -67,4 +72,10 @@ body {
   text-align: center;
   display: inline-flex;
   margin: auto;
+}
+
+#highscorebody {
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
 }

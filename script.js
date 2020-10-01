@@ -1,3 +1,5 @@
+// Variable definitions and information:
+
 var countDown = document.getElementById("timer");
 var questionOptions = document.getElementById("heading-questions");
 var startButton = document.getElementById("start-button");
@@ -10,6 +12,9 @@ var buttonD = document.getElementById("d");
 var highscoreInputName = document.getElementById("High-score");
 var finalScoreEl = document.getElementById("Final-Score");
 var intialsForm = document.getElementById("Intials-form");
+
+var backButton = document.getElementById("backButton");
+var clearButton = document.getElementById("ViewHighScore");
 
 var welcomeContainer = document.querySelector(".Welcome-container");
 var quizContainer = document.querySelector(".Quiz-Container");
@@ -65,6 +70,8 @@ var score = 0;
 var timeLeft = 75;
 var timerInterval;
 
+// Home Screen information:
+
 window.onload = function () {
   countDown.textContent = "Time:0";
   buttonA.style.display = "none";
@@ -75,9 +82,7 @@ window.onload = function () {
   submitButton.style.display = "none";
 };
 
-startButton.addEventListener("click", function () {
-  startQuiz();
-});
+// Quiz Screen information:
 
 function generateQuizQuestion() {
   welcomeContainer.style.display = "none";
@@ -147,6 +152,8 @@ function checkAnswer(answer) {
     quizOver();
   }
 }
+
+// Final Score Screen Information:
 
 function quizOver() {
   buttonA.style.display = "none";
@@ -221,6 +228,15 @@ function quizOver() {
   submitButton.style.display = "block";
 }
 
+// button options
+startButton.addEventListener("click", function () {
+  startQuiz();
+});
+
 submitButton.addEventListener("click", function () {
   window.location.replace("highscore.html");
+});
+
+backButton.addEventListener("click", function () {
+  window.location.replace("index.html");
 });
