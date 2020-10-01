@@ -12,6 +12,7 @@ var buttonD = document.getElementById("d");
 var highscoreInputName = document.getElementById("High-score");
 var finalScoreEl = document.getElementById("Final-Score");
 var intialsForm = document.getElementById("Intials-form");
+var intials = document.getElementById("intialsForm");
 
 var backButton = document.getElementById("backButton");
 var clearButton = document.getElementById("ViewHighScore");
@@ -234,6 +235,7 @@ startButton.addEventListener("click", function () {
 });
 
 submitButton.addEventListener("click", function () {
+  localStorage.setItem("initials", JSON.stringify(intials));
   window.location.replace("highscore.html");
 });
 

@@ -38,7 +38,10 @@ To be able to view this site you can visit my Github profile. This site is also 
 
 Below are photos of the Coding Quiz Process
 
-![]()
+![codeChallengeQuiz1](homework1.png)
+![codeChallengeQuiz2](homework2.png)
+![codeChallengeQuiz3](homework3.png)
+![codeChallengeQuiz4](homework4.png)
 
 Credits
 
