@@ -13,6 +13,7 @@ var highscoreInputName = document.getElementById("High-score");
 var finalScoreEl = document.getElementById("Final-Score");
 var intialsForm = document.getElementById("Intials-form");
 var intials = document.getElementById("intialsForm");
+var navHighScore = document.getElementById("High-Score-Button");
 
 var backButton = document.getElementById("backButton");
 var clearButton = document.getElementById("ViewHighScore");
@@ -81,6 +82,9 @@ window.onload = function () {
   buttonD.style.display = "none";
   intialsForm.style.display = "none";
   submitButton.style.display = "none";
+  navHighScore.addEventListener("click", function () {
+    window.location.replace("highscore.html");
+  });
 };
 
 // Quiz Screen information:
@@ -125,7 +129,7 @@ function startQuiz() {
 
     if (timeLeft === 0) {
       clearInterval(timerInterval);
-      showScore();
+      quizOver();
     } else if (timeLeft < 0) {
       clearInterval(timerInterval);
       quizOver();
@@ -146,7 +150,7 @@ function checkAnswer(answer) {
     currentQuestionIndex !== finalQuestionIndex
   ) {
     alert("That Is Incorrect.");
-    // timeLeft = timerInterval - 10;
+    timeLeft -= 10;
     currentQuestionIndex++;
     generateQuizQuestion();
   } else {
